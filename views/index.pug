@@ -1,0 +1,8 @@
+doctype html
+html
+    head
+    h1= title
+    ol
+        each val in thing
+            li
+                a(href=`/wiki/${val.id}`) #{val.title}
