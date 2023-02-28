@@ -12,7 +12,7 @@ html
 
         nav(class= "navbar navbar-light bg-light")
             div(class="container-fluid")
-                a(class="btn btn-outline-primary" role="button" href="#") 以撒的结合图鉴
+                a(class="btn btn-outline-primary" role="button" href="/") 以撒的结合图鉴
 
                 div(class="d-flex")
                     div(class="col-2")
@@ -42,13 +42,12 @@ html
                                     div(class="modal-footer")
                                         button(type="button" class="btn btn-secondary" data-bs-dismiss="modal") 关闭
                                         button(type="button" class="btn btn-primary") 注册
+
+
                     form(class="d-flex" action="/search" method="get")
                         input(class="form-control me-2" type="search" placeholder="请输入" aria-label="Search" name="searchResult" required)
                         div(class="col-3")
                             button(class="btn btn-outline-success" type="submit") 搜索
-
         div(class="container-sm p-5 my-5 border")
-            div(class="row gy-5 justify-content-md-center")
-                each val in thing
-                    div(class ="col-md-auto")
-                        a(href=`/wiki/${val.id}`,class="btn btn-outline-primary" role="button") #{val.title}
+
+

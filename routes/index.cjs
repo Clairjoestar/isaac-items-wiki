@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose')
 const items = require('../models/items')
+const { body,validationResult } = require('express-validator/check');
+const { sanitizeBody } = require('express-validator/filter');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -33,5 +35,18 @@ router.get('/wiki/:items', function (req, res, next) {
         });
     })
 });
+router.get('/search',function (req, res,next){
+    // console.log(req.query.searchResult)
+    const search_id=new RegExp(req.body.name, 'i');
+    let result =items.find({search_id}).then((data)=>{
+        res.render('search',{
 
+        })
+    }).catch((e) => {
+        console.log(e)
+        res.render('search',{
+
+        })
+        })
+})
 module.exports = router;
