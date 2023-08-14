@@ -6,57 +6,14 @@ html
 
         link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css', rel='stylesheet')
         title= title
+    body
         script(src= 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js')
         script(src= 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js')
-        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
-
-    script.
-            function limitClick() {
-                const btn = $('#sendbutton');
-
-                // Disable the button and add the disabled style
-                btn.prop('disabled', true).addClass('btn-secondary').removeClass('btn-primary');
-
-                let countdown = 60;
-
-                // Update button text and enable it after 60 seconds
-                const timer = setInterval(function () {
-                    btn.text(`请在 ${countdown} 秒后再次点击`);
-                    countdown--;
-
-                    if (countdown < 0) {
-                        clearInterval(timer);
-                        btn.prop('disabled', false).addClass('btn btn-outline-success no-wrap-button').removeClass('btn-secondary');
-                        btn.text("发送验证码");
-                    }
-                }, 1000);
-            }
-            $(document).ready(() => {
-                $('#sendbutton').click(e => {
-                    let email = $('#email').val();
-                    console.log(email)
-                    limitClick();
-                    $.ajax({
-                        type: 'POST',
-                        url: '/nodemailer/api/email',
-                        data: {'email': email},
-                        success: function (response) {
-                            $('#result').html('<div class="alert alert-success">发送成功</div>');
-                        },
-                        error: function (error) {
-                            $('#result').html('<div class="alert alert-danger">发送失败</div>');
-                        }
-                    });
-                });
-            });
-
-    body
-
 
         nav(class= "navbar navbar-light bg-light")
             div(class="container-fluid")
                 div(class="col-2")
-                    a(class="btn btn-outline-primary" role="button" href="/#") 以撒的结合图鉴
+                    a(class="btn btn-outline-primary" role="button" href="#") 以撒的结合图鉴
                 div(class="d-flex justify-content-center")
                     if isLogined
                         div(class="col-2")
@@ -105,15 +62,7 @@ html
                                                 input(type="password" class="form-control" placeholder="请输入" name="password" required)
                                             div(class="mb-3")
                                                 label(class="form-label") 邮箱
-                                                input(type="email" class="form-control" placeholder="请输入" name="email" id="email" required)
-                                            div(class="mb-3")
-                                                label(class="form-label") 验证码
-                                                form(class="d-flex" id="sendform")
-                                                    div(class="d-flex")
-                                                        input(type="code" class="form-control" placeholder="请输入" name="code" required)
-                                                        div(class="col-auto")
-                                                            button(class="btn btn-outline-success no-wrap-button" type="button" id="sendbutton" ) 发送验证码
-
+                                                input(type="email" class="form-control" placeholder="请输入" name="email" required)
                                             div(class="mb-3 form-check")
                                                 input(type="checkbox" class="form-check-input" id="Check1" required)
                                                 label(class="form-check-label" for="Check1" ) 请同意
@@ -131,6 +80,14 @@ html
 
         div(class="container-sm p-5 my-5 border")
             div(class="row gy-5 justify-content-md-center")
-                each val in thing
-                    div(class ="col-md-auto")
-                        a(href=`/wiki/${val.id}`,class="btn btn-outline-primary" role="button") #{val.title}
+                p 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                p 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                p 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                p 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                p 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                p 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                p 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                p 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                p 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                p 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+

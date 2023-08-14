@@ -12,4 +12,11 @@ const itemSchema = new Schema({
 
 });
 
+itemSchema.index({title:"text",
+                        english_title:"text",
+                        pickup_message:"text",
+                        description:"text",
+                        extra:"text"
+})
+
 module.exports = mongoose.model('items', itemSchema);
